@@ -1,62 +1,76 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8"/>
 
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
-
-    </head>
-    <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Logo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    </body>
-</html>
 <head>
     {% block stylesheets %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/web/css/normalize.css">
+        <link rel="stylesheet" href="/web/css/template.css">
     {% endblock %}
-    <style>
-        /* Set black background color, white text and some padding */
-        footer {
-            background-color: #555;
-            color: white;
-            padding: 15px;
-        }
-    </style>
+
+
 </head>
-<body>
-{% block body %}
+
+{% block header %}
+    <header class="header">
+        <a class="logo logo--text" href="/" title="RBS" rel="home">
+            <img src="/images/banners/logo12.png" class="logo__image" alt="RBS">
+        </a>
+    </header>
+    <nav class="navigation">
+        <ul class="nav menu">
+            <li class="item-101 default current active"><a href="/index.php">Главная</a></li>
+            <li class="item-102"><a href="/index.php/o-kompanii">О компании</a></li>
+            <li class="item-103"><a href="/index.php/kontakty">Контакты</a></li>
+            <li class="item-104"><a href="/index.php/proekty">Проекты</a></li>
+        </ul>
+
+    </nav>
 {% endblock %}
+
+{% block body %}
+
+
+{% endblock %}
+
+{% block footer %}
+    <footer class="footer">
+        <div class="footer__bottom" role="complementary" data-mod-num="2">
+            <div class="moduletable">
+
+
+                <div class="custom">
+                    <p>© 2018 | Rational Building of Systems</p></div>
+            </div>
+            <div class="moduletable">
+
+
+                <div class="custom">
+                    <p style="text-align: right;"><a href="https://vk.com/id481600413" title="вконтакте"
+                                                     target="_blank"><img src="/images/banners/soc_seti/vk.png" alt="vk"
+                                                                          width="44" height="44"></a>&nbsp;<a
+                                href="https://www.facebook.com/evgeniy.rbs.3" target="_blank" title="facebook"><img
+                                    src="/images/banners/soc_seti/facebook.png" alt="facebook" width="42"
+                                    height="44"></a>&nbsp;<img src="/images/banners/soc_seti/instagram.png"
+                                                               alt="instagram" width="45" height="45"></p></div>
+            </div>
+
+        </div><!-- .footer__bottom -->
+
+
+        <div class="footer__copyrights">
+
+
+        </div><!-- .footer__copyrights -->
+    </footer>
+{% endblock %}
+
+
 {% block javascripts %}
-    <script src="{{ path }}/web/bundles/fosjsrouting/js/router.js"></script>
-    <script src="{{ path }}/web/js/fos_js_routes.js"></script>
+    <script src="/web/bundles/fosjsrouting/js/router.js"></script>
+    <script src="/web/js/fos_js_routes.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 {% endblock %}
-</body>
 
-<footer class="container-fluid text-center">
-    <p>Footer Text</p>
-</footer>
 </html>
