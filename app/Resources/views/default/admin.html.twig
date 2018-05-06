@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    {{  parent() }}
+    <div class="admin">
+        <h2>Добавить товар</h2>
+
+        <form action="">
+            <input name="name" type="text" placeholder="Название">
+            <input name="вуыскшзешщт" type="text" placeholder="Описание">
+            <input name="category_id" type="text" placeholder="Категория">
+            <input name="thumbnail" type="file">
+            <input name="price" type="text" placeholder="Цена">
+            <input type="submit" value="Добавить">
+        </form>
+
+        <h2>Заявки</h2>
+
+        <div class="admin__wrapper">
+            <div>Клиент</div>
+            <div class="admin__item">
+                <div class="admin__item-name">Василий</div>
+                <div class="admin__item-phone">+7 962 520 5252</div>
+                <div class="basket__item-price"><span>8000</span> &#8381;</div>
+            </div>
+            <div class="basket">
+                <div class="basket__wrapper">
+                    <div class="basket__item">
+                        <div class="basket__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
+                        <div class="basket__item-counter">1 шт.</div>
+                        <div class="basket__item-price"><span>2000</span> &#8381;</div>
+                    </div>
+                    <div class="basket__item">
+                        <div class="basket__item-name">Сигнализация Razor-3000</div>
+                        <div class="basket__item-counter">3 шт.</div>
+                        <div class="basket__item-price"><span>6000</span> &#8381;</div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- .site__content -->
+    </div><!-- .site__main -->
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
+

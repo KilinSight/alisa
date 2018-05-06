@@ -2673,3 +2673,108 @@ div[data-mod-num="3"] .moduletable_menu:nth-child(3n+1) {
   justify-content: space-between;
   align-items: baseline;
 }
+
+
+.basket {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px 24px 50px 24px;
+}
+
+
+.basket__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+ border-bottom: 1px solid rgba(0,0,0,0.5);
+  padding-bottom: 25px;
+  align-items: center;
+}
+
+
+.basket__item-name {
+width: 50%;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+.basket__item-price {
+  font-size: 20px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+.basket__bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basket__all-price {
+  font-size: 20px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+
+
+.admin {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 50px 24px 50px 24px;
+}
+
+.admin__wrapper {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 50px 24px 50px 24px;
+}
+
+
+.admin__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  padding-bottom: 25px;
+  align-items: center;
+}
+
+.admin__item-name {
+  width: 35%;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+.admin__item-phone {
+  width: 35%;
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+.admin__item-price {
+  font-size: 20px;
+  line-height: normal;
+  font-weight: 700;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+input[type=file] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.admin h2 {
+    width: 100%;
+    text-align: center;
+}
