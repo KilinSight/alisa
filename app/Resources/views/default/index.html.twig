@@ -7,28 +7,12 @@
 
 {% block body %}
     {{  parent() }}
-    <div class="basket">
-        <div class="basket__wrapper">
-            <div class="basket__item">
-                <div class="basket__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
-                <div class="basket__item-counter">1 шт.</div>
-                <div class="basket__item-price"><span>2000</span> &#8381;</div>
-                <button data-good-id="12">Убрать из корзины</button>
-            </div>
-            <div class="basket__item">
-                <div class="basket__item-name">Сигнализация Razor-3000</div>
-                <div class="basket__item-counter">1 шт.</div>
-                <div class="basket__item-price"><span>2000</span> &#8381;</div>
-                <button data-good-id="12">Убрать из корзины</button>
-            </div>
-            <div class="basket__bottom">
-                <div class="basket__all-price">
-                    Итого: <span>0</span> &#8381;
-                </div>
-                <button>Оформить КП</button>
-            </div>
-
-        </div>
+    <div class="login">
+        <form action="">
+            <input type="text" placeholder="Имя">
+            <input type="text" placeholder="Пароль">
+            <input type="submit" value="Войти">
+        </form>
     </div>
 
     <!-- .site__content -->

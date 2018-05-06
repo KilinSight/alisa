@@ -2778,3 +2778,9 @@ input[type=file] {
     width: 100%;
     text-align: center;
 }
+
+.login {
+  margin: 0 auto;
+  padding: 50px;
+  width: 45%;
+}
