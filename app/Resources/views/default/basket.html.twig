@@ -9,18 +9,14 @@
     {{  parent() }}
     <div class="basket">
         <div class="basket__wrapper">
-            <div class="basket__item">
-                <div class="basket__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
-                <div class="basket__item-counter">1 шт.</div>
-                <div class="basket__item-price"><span>2000</span> &#8381;</div>
-                <button data-good-id="12">Убрать из корзины</button>
-            </div>
-            <div class="basket__item">
-                <div class="basket__item-name">Сигнализация Razor-3000</div>
-                <div class="basket__item-counter">1 шт.</div>
-                <div class="basket__item-price"><span>2000</span> &#8381;</div>
-                <button data-good-id="12">Убрать из корзины</button>
-            </div>
+            {% for basketGood in basketGoods %}
+                <div class="basket__item">
+                    <div class="basket__item-name">{{ basketGood.good.name }}</div>
+                    <div class="basket__item-counter">{{ basketGood.count }} шт.</div>
+                    <div class="basket__item-price"><span>{{ basketGood.good.price * basketGood.count }}</span> &#8381;</div>
+                    <button data-good-id="{{ basketGood.good.id }}">Убрать из корзины</button>
+                </div>
+            {% endfor %}
             <div class="basket__bottom">
                 <div class="basket__all-price">
                     Итого: <span>0</span> &#8381;
@@ -38,5 +34,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+
+    <script src="{{ asset("common.js", "js")}}"></script>
 {% endblock %}
 

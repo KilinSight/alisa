@@ -15,51 +15,47 @@
             <li class="catalog__nav-item catalog__nav-item--signal">Сигнализация</li>
         </ul>
         <div class="catalog__wrapper">
-            <div class="catalog__item catalog__item--fire">
-                <img src="/web/images/vks1.jpg" alt="">
-                <div class="catalog__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
-                <div class="catalog__item-info">
-                    <ul>
-                        <li>Предназначен для отслеживания возгораний и присутствия дыма в помещении;</li>
-                        <li>Полностью беспроводной, легко монтируется;</li>
-                        <li>Рассчитан на площадь до 20 м кв., регулируемая чувствительность;</li>
-                        <li>При тревоге включает встроенную звуковую сирену мощностью 85 дБ;</li>
-                    </ul>
+            {% for good in goods %}
+                <div class="catalog__item catalog__item--{% if good.category.id == 1 %}fire{% elseif good.category.id == 2 %}video{% elseif good.category.id == 3 %}signal{% endif %}">
+                    <img src="{{ good.thumbnail }}" alt="">
+                    <div class="catalog__item-name">{{ good.name }}</div>
+                    <div class="catalog__item-info">
+                        {{ good.description|raw }}
+                    </div>
+                    <div class="catalog__item-bottom">
+                        <div class="catalog__item-price">{{ good.price }} &#8381;</div>
+                        <button data-good-id="{{ good.id }}">Добавить в корзину</button>
+                    </div>
                 </div>
-                <div class="catalog__item-bottom">
-                    <div class="catalog__item-price">2000 &#8381;</div>
-                    <button data-good-id="12">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="catalog__item catalog__item--video">
-                <img src="/web/images/visual_sys1.jpg" alt="">
-                <div class="catalog__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
-                <div class="catalog__item-info">
-                    <ul>
-                        <li>Предназначен для отслеживания возгораний и присутствия дыма в помещении;</li>
-                        <li>Полностью беспроводной, легко монтируется;</li>
-                    </ul>
-                </div>
-                <div class="catalog__item-bottom">
-                    <div class="catalog__item-price">2000 &#8381;</div>
-                    <button data-good-id="1">Добавить в корзину</button>
-                </div>
-            </div>
-            <div class="catalog__item catalog__item--signal">
-                <img src="/web/images/electromont.jpg" alt="">
-                <div class="catalog__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
-                <div class="catalog__item-info">
-                    <ul>
-                        <li>Предназначен для отслеживания возгораний и присутствия дыма в помещении;</li>
-                        <li>Полностью беспроводной, легко монтируется;</li>
-                    </ul>
-                </div>
-                <div class="catalog__item-bottom"  data-good-id="11">
-                    <div class="catalog__item-price">2000 &#8381;</div>
-                    <button  data-good-id="8">Добавить в корзину</button>
-                </div>
-            </div>
-
+            {% endfor %}
+            {#<div class="catalog__item catalog__item--video">#}
+                {#<img src="/web/images/visual_sys1.jpg" alt="">#}
+                {#<div class="catalog__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>#}
+                {#<div class="catalog__item-info">#}
+                    {#<ul>#}
+                        {#<li>Предназначен для отслеживания возгораний и присутствия дыма в помещении;</li>#}
+                        {#<li>Полностью беспроводной, легко монтируется;</li>#}
+                    {#</ul>#}
+                {#</div>#}
+                {#<div class="catalog__item-bottom">#}
+                    {#<div class="catalog__item-price">2000 &#8381;</div>#}
+                    {#<button data-good-id="1">Добавить в корзину</button>#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="catalog__item catalog__item--signal">#}
+                {#<img src="/web/images/electromont.jpg" alt="">#}
+                {#<div class="catalog__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>#}
+                {#<div class="catalog__item-info">#}
+                    {#<ul>#}
+                        {#<li>Предназначен для отслеживания возгораний и присутствия дыма в помещении;</li>#}
+                        {#<li>Полностью беспроводной, легко монтируется;</li>#}
+                    {#</ul>#}
+                {#</div>#}
+                {#<div class="catalog__item-bottom"  data-good-id="11">#}
+                    {#<div class="catalog__item-price">2000 &#8381;</div>#}
+                    {#<button  data-good-id="8">Добавить в корзину</button>#}
+                {#</div>#}
+            {#</div>#}
         </div>
     </div>
     <!-- .site__content -->
@@ -69,5 +65,7 @@
 
 {% block javascripts %}
     {{ parent() }}
+
+    <script src="{{ asset("common.js", "js")}}"></script>
 {% endblock %}
 

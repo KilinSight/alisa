@@ -3,30 +3,29 @@
 
 <head>
     {% block stylesheets %}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/web/css/normalize.css">
-        <link rel="stylesheet" href="/web/css/template.css">
+        <link rel="stylesheet" href="{{ asset('bootstrap.min.css', 'bootstrapcss') }}">
+        <link rel="stylesheet" href="{{ asset('normalize.css', 'css') }}">
+        <link rel="stylesheet" href="{{ asset('template.css', 'css') }}">
     {% endblock %}
-
-
 </head>
 
 {% block header %}
     <header class="header">
         <a class="logo logo--text" href="/" title="RBS" rel="home">
-            <img src="/web/images/logo13.png" class="logo__image" alt="RBS">
+            <img src="{{ asset('logo13.png', 'images') }}" class="logo__image" alt="RBS">
         </a>
     </header>
     <nav class="navigation">
         <ul class="nav menu">
-            <li class="item-101 default current active"><a href="/index.php">Главная</a></li>
+            <li class="item-101 default current active"><a href="/">Главная</a></li>
             <li class="item-102"><a href="http://rbs-link.ru/index.php/o-kompanii">О компании</a></li>
             <li class="item-103"><a href="http://rbs-link.ru/index.php/kontakty">Контакты</a></li>
             <li class="item-104"><a href="http://rbs-link.ru/index.php/proekty">Проекты</a></li>
         </ul>
         <div class="ctlg-btn-block">
-            <a href="#" class="ctlg-btn">Каталог</a>
-            <a href="#" class="entr-btn">Корзина</a>
+            <a href="/catalog" class="ctlg-btn">Каталог</a>
+            <a href="/basket" class="entr-btn">Корзина</a>
+            <a href="/login" class="login-btn">Войти</a>
         </div>
 
     </nav>
@@ -51,11 +50,11 @@
 
                 <div class="custom">
                     <p style="text-align: right;"><a href="https://vk.com/id481600413" title="вконтакте"
-                                                     target="_blank"><img src="/web/images/vk.png" alt="vk"
+                                                     target="_blank"><img src="{{ asset("vk.png", "images") }}" alt="vk"
                                                                           width="44" height="44"></a>&nbsp;<a
                                 href="https://www.facebook.com/evgeniy.rbs.3" target="_blank" title="facebook"><img
-                                    src="/web/images/facebook.png" alt="facebook" width="42"
-                                    height="44"></a>&nbsp;<img src="/web/images/instagram.png"
+                                    src="{{ asset("facebook.png", "images")}}" alt="facebook" width="42"
+                                    height="44"></a>&nbsp;<img src="{{ asset("instagram.png", "images") }}"
                                                                alt="instagram" width="45" height="45"></p></div>
             </div>
 
@@ -71,11 +70,11 @@
 
 
 {% block javascripts %}
-    <script src="/web/bundles/fosjsrouting/js/router.js"></script>
-    <script src="/web/js/fos_js_routes.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/web/js/common.js"></script>
+    <script src="{{ asset("router.js", "fos_js_bundle")}}"></script>
+    <script src="{{ asset("fos_js_routes.js", "js")}}"></script>
+    <script src="{{ asset("jquery.min.js", "jquery") }}"></script>
+    <script src="{{ asset("bootstrap.min.js", "bootstrapjs") }}"></script>
+    <script src="{{ asset("common.js", "js")}}"></script>
 {% endblock %}
 
 </html>
