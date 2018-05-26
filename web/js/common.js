@@ -118,7 +118,7 @@ $(document).ready(function () {
     })
 
     $(document).on('click', '.admin__item-check', function (event) {
-        event.target().parent().toggleClass('admin__item--checked')
+        $(event.target).parent().toggleClass('admin__item--checked')
 
     })
 })

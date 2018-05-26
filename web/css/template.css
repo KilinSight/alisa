@@ -2827,7 +2827,9 @@ input[type=file] {
   letter-spacing: 1px;
   text-decoration: none!important;
   margin-right: 20px;
+  line-height: 200%;
   border: none;
+  outline: none!important;
 }
 
 .admin__item--checked {
