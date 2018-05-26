@@ -2784,3 +2784,7 @@ input[type=file] {
   padding: 50px;
   width: 45%;
 }
+
+.login form {
+    text-align: center;
+}
