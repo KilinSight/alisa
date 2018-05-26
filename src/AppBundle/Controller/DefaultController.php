@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends BaseController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homepage", options = {"expose": true})
      * @param Request $request
      * @return mixed
      */

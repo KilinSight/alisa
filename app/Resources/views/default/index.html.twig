@@ -8,9 +8,10 @@
 {% block body %}
     {{  parent() }}
     <div class="login">
-        <form action="">
-            <input type="text" placeholder="Имя">
-            <input type="text" placeholder="Пароль">
+        <form action="/" class="js-login-form">
+            <div></div>
+            <input type="text" required placeholder="Имя">
+            <input type="password" required placeholder="Пароль">
             <input type="submit" value="Войти или зарегистрироваться">
         </form>
         <p>*заполняя данную форму вы даете согласие на обработку персональных данных</p>

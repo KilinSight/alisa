@@ -2592,6 +2592,7 @@ div[data-mod-num="3"] .moduletable_menu:nth-child(3n+1) {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-decoration: none!important;
+  margin-right: 20px;
   transition: background-color 0.4s ease;
 }
 
@@ -2599,6 +2600,25 @@ div[data-mod-num="3"] .moduletable_menu:nth-child(3n+1) {
   border: 2px solid #FFF;
   color: #FFF;
   background-color: darkgreen;
+}
+
+.login-btn {
+  display: inline-block;
+  padding: 5px 20px 5px 20px;
+  border-radius: 5px;
+  border: 2px solid #0088CC;
+  color: darkgreen;
+  font-family: Helvetica;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none!important;
+  transition: background-color 0.4s ease;
+}
+
+.login-btn:hover{
+  border: 2px solid #FFF;
+  color: #FFF;
+  background-color: #0088CC;
 }
 
 .catalog {
@@ -2765,6 +2785,13 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
+}
+
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
 }
 
 input[type=file] {
