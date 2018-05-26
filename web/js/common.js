@@ -116,4 +116,9 @@ $(document).ready(function () {
             $(this).find('div').text('Неверный логин и/или пароль');
         }
     })
+
+    $(document).on('click', '.admin__item-check', function (event) {
+        event.target().parent().toggleClass('admin__item--checked')
+
+    })
 })
