@@ -22,27 +22,26 @@
         <h2>Заявки</h2>
 
         <div class="admin__wrapper">
+        {% for order in closedOrders %}
             <div>Клиент</div>
             <div class="admin__item">
-                <div class="admin__item-name">Василий</div>
-                <div class="admin__item-phone">+7 962 520 5252</div>
-                <div class="basket__item-price"><span>8000</span> &#8381;</div>
+                <div class="admin__item-name">{{ order.user.name }}</div>
+                <div class="admin__item-phone">{{ order.user.phone }}</div>
+                <div class="basket__item-price"><span>{{ order.summ }}</span> &#8381;</div>
             </div>
             <div class="basket">
                 <div class="basket__wrapper">
-                    <div class="basket__item">
-                        <div class="basket__item-name">Беспроводной датчик дыма со встроенной сиреной Altronics SM-01</div>
-                        <div class="basket__item-counter">1 шт.</div>
-                        <div class="basket__item-price"><span>2000</span> &#8381;</div>
-                    </div>
-                    <div class="basket__item">
-                        <div class="basket__item-name">Сигнализация Razor-3000</div>
-                        <div class="basket__item-counter">3 шт.</div>
-                        <div class="basket__item-price"><span>6000</span> &#8381;</div>
-                    </div>
+                    {% for basketItem in order.basket %}
+                        <div class="basket__item">
+                            <div class="basket__item-name">{{ basketItem.good.name }}</div>
+                            <div class="basket__item-counter">{{ basketItem.count }} шт.</div>
+                            <div class="basket__item-price"><span>{{ basketItem.good.price }}</span> &#8381;</div>
+                        </div>
+                    {% endfor %}
                 </div>
+            </div>
+            {% endfor %}
         </div>
-    </div>
     <!-- .site__content -->
     </div><!-- .site__main -->
     </div>

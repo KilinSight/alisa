@@ -3,6 +3,8 @@ $(document).ready(function () {
 
     var prices = $('.basket__item-price span'),
         allprice = 0;
+    var loginLocation = 'http://alisa' + Routing.generate('basket');
+
 
     prices.each(function () {
         var val = +($(this).text());
@@ -15,10 +17,27 @@ $(document).ready(function () {
     checkAuth();
     function checkAuth() {
         var $loginBtn = $('.login-btn');
-        if (localStorage.getItem('user') !== undefined) {
+        if (localStorage.getItem('user')) {
             $loginBtn.text('Выйти(' + localStorage.getItem('user') + ')');
             $loginBtn.addClass('logout-btn');
         }
+
+        if(location.href === loginLocation) {
+            if (!localStorage.getItem('user')) {
+                location.href = Routing.generate('login');
+            }
+        }
+    }
+
+    function getCurrentUser() {
+        var user = null;
+        if(!localStorage.getItem('user')){
+            location.href = Routing.generate('login');
+        }else{
+            user = localStorage.getItem('user');
+        }
+
+        return user;
     }
 
     $('.catalog__item button').click(function () {
@@ -52,6 +71,16 @@ $(document).ready(function () {
         });
     })
 
+    $(document).on('click', '.entr-btn', function (event) {
+        event.preventDefault();
+        var user = getCurrentUser();
+        if(user){
+            location.href = Routing.generate('basket', {user: user});
+        }else{
+            location.href = Routing.generate('login');
+        }
+    })
+
 
     $(document).on('click', '.logout-btn', function (e) {
         e.preventDefault();
@@ -59,6 +88,8 @@ $(document).ready(function () {
         $('.login-btn').text('Войти');
         $('.login-btn').removeClass('logout-btn');
         $('.login div').html('');
+
+        location.href = Routing.generate('homepage');
     });
 
     $('.js-login-form').on('submit', function (event) {
