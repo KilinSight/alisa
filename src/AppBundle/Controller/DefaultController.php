@@ -92,7 +92,7 @@ class DefaultController extends BaseController
      * @param Request $request
      * @return mixed
      */
-    public function adminAction(Request $request, \Swift_Mailer $mailer)
+    public function adminAction(Request $request)
     {
         $em = $this->getEm();
         $qb = $em->createQueryBuilder();
