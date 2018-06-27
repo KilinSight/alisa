@@ -1,0 +1,44 @@
+.b-login-form {
+    width: 550px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 30px 100px 70px 100px;
+    margin-top: 150px;
+    box-shadow: 0 1px 4px rgba(243, 91, 104, 0.3), 0 0 40px rgba(243, 91, 104, 0.1) inset;
+    background-color: $light;
+
+
+    h2 {
+        text-align: center;
+        margin-bottom: 32px;
+    }
+
+    .btn--blue {
+        background-color: $lightBlue;
+        color: $white;
+
+        &:hover {
+            background-color: $darkBlue;
+        }
+    }
+
+    .btn--pink {
+        background-color: $lightPink;
+        color: $white;
+        float: right;
+        margin-top: -35px;
+
+        &:hover {
+            background-color: $darkPink;
+        }
+    }
+
+    .form-check {
+        margin-bottom: 12px;
+    }
+
+    .form-check-label {
+        padding-left: 3px;
+        margin-top: -2px;
+    }
+}
