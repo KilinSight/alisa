@@ -30,13 +30,13 @@ framework:
     assets:
         packages:
             css:
-                base_path: "web/css"
+                base_path: "web/front/css"
             images:
                 base_path: "web/images"
             fos_js_bundle:
-                base_path: "web/bundles/fosjsrouting/js"
-            js:
                 base_path: "web/js"
+            js:
+                base_path: "web/front/js"
             jquery:
                 base_urls: "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/"
             bootstrapcss:

@@ -3,79 +3,25 @@
 
 <head>
     {% block stylesheets %}
-        <link rel="stylesheet" href="{{ asset('bootstrap.min.css', 'css') }}">
-        <link rel="stylesheet" href="{{ asset('normalize.css', 'css') }}">
-        <link rel="stylesheet" href="{{ asset('template.css', 'css') }}">
+        {#<link rel="stylesheet" href="{{ asset('bootstrap.min.css', 'css') }}">#}
+        <link rel="stylesheet" href="{{ asset('style.css', 'css') }}">
+        {#<link rel="stylesheet" href="{{ asset('template.css', 'css') }}">#}
     {% endblock %}
 </head>
-
-{% block header %}
-    <header class="header">
-        <a class="logo logo--text" href="/" title="RBS" rel="home">
-            <img src="{{ asset('logo13.png', 'images') }}" class="logo__image" alt="RBS">
-        </a>
-    </header>
-    <nav class="navigation">
-        <ul class="nav menu">
-            <li class="item-101 default current active"><a href="/">Главная</a></li>
-            <li class="item-102"><a href="http://rbs-link.ru/index.php/o-kompanii">О компании</a></li>
-            <li class="item-103"><a href="http://rbs-link.ru/index.php/kontakty">Контакты</a></li>
-            <li class="item-104"><a href="http://rbs-link.ru/index.php/proekty">Проекты</a></li>
-        </ul>
-        <div class="ctlg-btn-block">
-            <a href="/catalog" class="ctlg-btn">Каталог</a>
-            <a href="/basket" class="entr-btn">Корзина</a>
-            <a href="/login" class="login-btn">Войти</a>
-        </div>
-
-    </nav>
-{% endblock %}
 
 {% block body %}
 
 
 {% endblock %}
 
-{% block footer %}
-    <footer class="footer">
-        <div class="footer__bottom" role="complementary" data-mod-num="2">
-            <div class="moduletable">
-
-
-                <div class="custom">
-                    <p>© 2018 | Rational Building of Systems</p></div>
-            </div>
-            <div class="moduletable">
-
-
-                <div class="custom">
-                    <p style="text-align: right;"><a href="https://vk.com/id481600413" title="вконтакте"
-                                                     target="_blank"><img src="{{ asset("vk.png", "images") }}" alt="vk"
-                                                                          width="44" height="44"></a>&nbsp;<a
-                                href="https://www.facebook.com/evgeniy.rbs.3" target="_blank" title="facebook"><img
-                                    src="{{ asset("facebook.png", "images")}}" alt="facebook" width="42"
-                                    height="44"></a>&nbsp;<img src="{{ asset("instagram.png", "images") }}"
-                                                               alt="instagram" width="45" height="45"></p></div>
-            </div>
-
-        </div><!-- .footer__bottom -->
-
-
-        <div class="footer__copyrights">
-
-
-        </div><!-- .footer__copyrights -->
-    </footer>
-{% endblock %}
-
 
 {% block javascripts %}
     <script src="{{ asset("router.js", "fos_js_bundle")}}"></script>
-    <script src="{{ asset("fos_js_routes.js", "js")}}"></script>
-    <script src="{{ asset("jquery-3.2.1.min.js", "js") }}"></script>
+    <script src="{{ asset("fos_js_routes.js", "fos_js_bundle")}}"></script>
+    {#<script src="{{ asset("jquery-3.2.1.min.js", "js") }}"></script>#}
     {#<script src="{{ asset("jquery.min.js", "jquery") }}"></script>#}
-    <script src="{{ asset("bootstrap.min.js", "bootstrapjs") }}"></script>
-    <script src="{{ asset("common.js", "js")}}"></script>
+    {#<script src="{{ asset("bootstrap.min.js", "bootstrapjs") }}"></script>#}
+    <script src="{{ asset("bundle.js", "js")}}"></script>
 {% endblock %}
 
 </html>
